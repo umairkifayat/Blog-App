@@ -7,14 +7,14 @@ import { getStorage } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-s
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDB5qeXi2UDiqQ9VcD3I66op50FP87wJpQ",
-    authDomain: "blog-app-add4a.firebaseapp.com",
-    projectId: "blog-app-add4a",
-    storageBucket: "blog-app-add4a.appspot.com",
-    messagingSenderId: "605574230818",
-    appId: "1:605574230818:web:a8117560cb486929f5ab7b",
-    measurementId: "G-M26SB5Y69J"
-  };
+  apiKey: "AIzaSyD5eIbGdxOV_n7rl8Dd1Z8hQNOXkMgBrpo",
+  authDomain: "blog-app-939ad.firebaseapp.com",
+  projectId: "blog-app-939ad",
+  storageBucket: "blog-app-939ad.appspot.com",
+  messagingSenderId: "633080552688",
+  appId: "1:633080552688:web:8a2a5284ce319a29627635",
+  measurementId: "G-WR3FFHPDSG"
+};
 
 
 export const app = initializeApp(firebaseConfig);
