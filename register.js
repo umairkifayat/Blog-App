@@ -1,7 +1,7 @@
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 import { auth, db, storage } from './config.js';
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
-import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-storage.js";
 
 const email = document.querySelector('.email');
 const password = document.querySelector('.password');
@@ -43,7 +43,7 @@ btn.addEventListener("click", async (event) => {
         });
 
         console.log('User registered successfully');
-        window.location = 'Dashboard.html';
+        window.location = './Dashboard.html';
     } catch (error) {
         console.error(error);
 
