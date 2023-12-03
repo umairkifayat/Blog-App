@@ -1,0 +1,161 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f2f2f2; /* Set a light background color */
+    color: #333; /* Set a default text color */
+}
+
+/* Unique CSS for the Navigation Bar */
+nav.nav {
+    background-color: #3498db; /* Blue background color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .h1-nav {
+    font-family: 'Lobster', cursive; /* Apply Lobster font to the entire document */
+    color: white;
+    margin: 0;
+}
+
+nav .img {
+    max-width: 50px;
+    border-radius: 50%;
+}
+.img {
+    max-width: 80px;
+    border-radius: 30%;
+}
+
+
+nav .username {
+    color: #2c3e50;
+    margin: 0;
+}
+
+nav .logout {
+    background-color: #e74c3c; /* Red background color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+
+    /* Hover effect */
+    &:hover {
+        background-color: #c0392b; /* Darker red on hover */
+    }
+}
+
+.h1-head {
+    /* text-align: center; */
+    padding: 25px;
+    margin-top: 20px;
+}
+
+/* Unique CSS for the Blog Form */
+.blog-form {
+    /* max-width: 600px; */
+    /* margin: 0 auto; */
+    padding: 25px;
+}
+
+.title,
+.description {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.description {
+    height: 50px;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+
+    /* Hover effect */
+    &:hover {
+        background-color: #2980b9; /* Darker blue on hover */
+    }
+}
+
+/* Unique CSS for the Rendered Blogs */
+.render {
+  display: flex;
+  align-items: center;
+}
+
+/* Add vendor prefixes for webkit properties */
+::-webkit-input-placeholder {
+    color: #999; /* Placeholder text color */
+}
+
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* Scrollbar thumb color */
+    border-radius: 5px; /* Scrollbar thumb border-radius */
+}
+
+/* Add more styles as needed */
+.rendertitle{
+    font-size: 30px;
+}
+.rendermain{
+    background-color: white;
+    padding: 25px;
+    width: 60%;
+    border-radius: 5px;
+    
+}
+
+#delete{
+    background-color: white; /* Red background color */
+    /* color: white; */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+
+    /* Hover effect */
+    &:hover {
+        background-color: red; /* Darker red on hover */
+    }
+}
+#update{
+    background-color: white;
+    /* color: white; */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+
+    /* Hover effect */
+    &:hover {
+        background-color: #2980b9; /* Darker blue on hover */
+    }
+}
