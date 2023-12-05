@@ -4,6 +4,8 @@ import { auth, db } from './config.js';
 
 let docimage;
 let docnam;
+
+// on auth function start 
 onAuthStateChanged(auth, async (user) => {
     if (user) {
         console.log(user);
@@ -18,13 +20,21 @@ onAuthStateChanged(auth, async (user) => {
             docimage = doc.data().profileUrl;
             docnam =  doc.data().firstName;
         });
-        
-        // console.log(docnam);
-        // Fetch and render user-specific posts
         getDataFromFirestore(uid);
     }
 });
 
+
+// on auth function end 
+
+
+
+
+
+
+
+
+// variables
 const title = document.querySelector('.title');
 const des = document.querySelector('.description');
 const btn = document.querySelector('.btn');
@@ -33,6 +43,10 @@ const img = document.querySelector('.img');
 const name = document.querySelector('.username');
 const logout = document.querySelector('.logout');
 let arr = [];
+
+
+
+
 
 
     // logout function 
@@ -45,17 +59,23 @@ let arr = [];
         });
     });
 
+
+
+
+
+
+
+
+
+    
+
 // render function 
 function renderpost() {
-    // Clear the div before rendering to avoid appending content
+    
     div.innerHTML = "";
-
-    // Use forEach instead of map
     arr.forEach((item) => {
         let date = item.postDate.seconds;
         let daterender = new Date(date * 1000).toDateString()
-        // console.log(daterender);
-        // console.log(item);
         div.innerHTML += `<div class = "rendermain">
         <div class = "render">
         <img src="${docimage}" alt="" class="img">
@@ -84,24 +104,37 @@ function renderpost() {
                 });
         })
     })
-    upd.forEach((btn, index) => {
-        btn.addEventListener('click', async () => {
-            console.log('update called', arr[index]);
-            const updatedTitle = prompt('enter new Title');
-            await updateDoc(doc(db, "posts", arr[index].docId), {
-                Title: updatedTitle
-            });
-            arr[index].title = updatedTitle;
-            renderpost()
-
-        })
+        upd.forEach((btn, index) => {
+            btn.addEventListener('click', async () => {
+                console.log("Edit Called", arr[index]);
+                const updatedTitle = prompt('Enter new Title', arr[index].Title)
+                const updateDes = prompt('Enter new Description', arr[index].Description)
+                await updateDoc(doc(db, "posts", arr[index].docId), {
+                    title: updatedTitle,
+                    description:updateDes,
+                    time: Timestamp.fromDate(new Date())
+                });
+                arr[index].Title = updatedTitle;
+                arr[index].Description = updateDes
+                renderpost()
+            })
+    
     })
 }
 
+
+
+
+
+
+
+
+
+
+
 // get data on firestore 
 async function getDataFromFirestore(uid) {
-    // Clear the existing data in the array before fetching new data
-    arr.length = 0;
+        arr.length = 0;
 
     const querySnapshot = await getDocs(query(collection(db, "posts"), orderBy('postDate', 'desc'), where('uid', '==', uid)));
     querySnapshot.forEach((doc) => {
@@ -113,6 +146,18 @@ async function getDataFromFirestore(uid) {
 
     renderpost();
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // data post on firestore 
 btn.addEventListener('click', async (event) => {
@@ -129,10 +174,8 @@ btn.addEventListener('click', async (event) => {
         await addDoc(collection(db, "posts"), obj);
         console.log('User registered successfully');
 
-        // After posting, fetch and render the updated posts
         getDataFromFirestore(auth.currentUser.uid);
     } catch (error) {
         console.error(error);
-        // Handle errors, show messages, etc.
     }
 });
