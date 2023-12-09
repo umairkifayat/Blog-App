@@ -28,7 +28,7 @@ btn.addEventListener("click", async (event) => {
         console.log(user);
 
         const files = Photo.files[0];
-        const storageRef = ref(storage, username.value);
+        const storageRef = ref(storage, email.value);
 
         await uploadBytes(storageRef, files);
         

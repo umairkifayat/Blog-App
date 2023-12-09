@@ -2,8 +2,10 @@ import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/
 import { collection, addDoc, Timestamp, getDocs, orderBy, where, query, doc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 import { auth, db } from './config.js';
 
-let docimage;
-let docnam;
+let userobj;
+let  docimage;
+let  docnam;
+
 
 // on auth function start 
 onAuthStateChanged(auth, async (user) => {
@@ -15,12 +17,14 @@ onAuthStateChanged(auth, async (user) => {
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
             console.log(doc.data());
+            userobj = doc.data()
             img.src = doc.data().profileUrl;
             name.innerHTML = doc.data().firstName;
             docimage = doc.data().profileUrl;
             docnam =  doc.data().firstName;
         });
         getDataFromFirestore(uid);
+        console.log(userobj);
     }
 });
 
@@ -168,6 +172,7 @@ btn.addEventListener('click', async (event) => {
         Description: des.value,
         uid: auth.currentUser.uid,
         postDate: Timestamp.fromDate(new Date()),
+        userobj,
     };
 
     try {
