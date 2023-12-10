@@ -20,9 +20,11 @@ onAuthStateChanged(auth, async (user) => {
             userobj = doc.data()
             docimage = doc.data().profileUrl;
             docnam = doc.data().firstName;
-        });
+        })
         getDataFromFirestore(uid);
         console.log(userobj);
+    }else{
+        window.location = 'index.html'
     }
 });
 
@@ -54,7 +56,7 @@ let arr = [];
 logout.addEventListener('click', () => {
     signOut(auth).then(() => {
         console.log('logout successfully');
-        window.location = 'index.html';
+        window.location = 'log.html';
     }).catch((error) => {
         console.log(error);
     });
@@ -186,5 +188,7 @@ btn.addEventListener('click', async (event) => {
         console.error(error);
     }
 });
+Title.value = '';
+Description.value = '';
 
 console.log(userobj);

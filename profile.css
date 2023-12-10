@@ -11,7 +11,7 @@ body{
 }
 .profile-div{
     display: flex;
-    background-color:#7749F8;
+    background-color:#4caf50;
     color: white;
     padding: 10px;
     }
@@ -21,7 +21,7 @@ body{
 }
 .profile-main{
     display: flex;
-    background-color:#7749F8;
+    background-color:#4caf50;
     justify-content: space-between;
 }
 h1{
@@ -30,7 +30,7 @@ margin-left: 40px;
 }
 
 .profile{
-    background-color: black;
+    background-color: #44a040;
     color: #FFFFFF;
     padding: 10px;
     
@@ -58,12 +58,11 @@ input {
 }
 
 .but{
-    background-color:;
+    background-color: #4caf50;
     Width : 169px;
     Height: 38px;
     margin-top: 12px;
     Left:219px;
-    border-radius: 6px;
     Padding: 10px, 16px, 10px, 16px;
     Gap:8px;
     color: white;
@@ -87,7 +86,7 @@ height: 304px;
     outline:none ;
     border: none;
     font-size: 2rem;
-   background-color: transparent;
+   background-color: #4caf50;
     cursor: pointer;
  }
  .p-btn:hover{

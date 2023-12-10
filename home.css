@@ -80,3 +80,70 @@ padding-top: 10px;
     color: darkgray;
     font-size: 12px;
 }
+
+/* Unique CSS for the Navigation Bar */
+nav.nav {
+    background-color: #7749F8; /* Blue background color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile-main{
+    display: flex;
+    justify-content: space-between;
+    background-color: #45a049;
+    color: white;
+    padding: 10px;
+
+}
+.p-div{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+nav .h1-nav {
+    color: white;
+    margin: 0;
+}
+.main-render {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 3%;
+    border-radius: 50%;
+}
+.r-description{
+padding-top: 10px;
+}
+.r-title{
+    color: darkgray;
+    font-size: 12px;
+}
+nav .img {
+    max-width: 50px;
+    border-radius: 50%;
+}
+/* .img {
+    max-width: 80px;
+    border-radius: 30%;
+} */
+
+
+nav .username {
+    color: #2c3e50;
+    margin: 0;
+}
+
+.h1-head {
+    text-align: center;
+    padding: 25px;
+    margin-top: 20px;
+    text-align: center;
+    color: #45a049;
+}
