@@ -1,29 +1,31 @@
-*{
+* {
     margin: 0%;
     padding: 0;
     box-sizing: border-box;
- 
+
 }
-body{
+
+body {
     font-family: Arial, sans-serif;
-    
+
 }
 
-.home-div{
-display: flex;
-justify-content: space-between;
-background-color:#45a049 ;
-color: white;
-padding: 10px;
+.home-div {
+    display: flex;
+    justify-content: space-between;
+    background-color: #45a049;
+    color: white;
+    padding: 10px;
 }
 
-.home-div1{
-margin-left: 40px;
+.home-div1 {
+    margin-left: 40px;
 }
 
-.home-div2{
-margin-right: 40px;
+.home-div2 {
+    margin-right: 40px;
 }
+
 button {
     background-color: #4caf50;
     color: white;
@@ -31,7 +33,7 @@ button {
     border: 1px solid black;
     border-radius: 4px;
     cursor: pointer;
-    
+
     text-align: center;
     width: 100%;
 }
@@ -39,28 +41,42 @@ button {
 button:hover {
     background-color: #45a049;
 }
-nav .img {
-    max-width: 50px;
-    border-radius: 50%;
-}
-.img {
-    max-width: 80px;
-    border-radius: 30%;
-}
+
 a {
-    color:white;
+    color: white;
     text-decoration: none;
     display: block;
     text-align: center;
 
 }
-.div-h2{
-    color: white;
-    margin-left : 40px;
-}
- .home-nav{
-    background-color:black;
-    padding: 15px;
 
-    
-} 
+.div-h2 {
+    color: white;
+    margin-left: 40px;
+}
+
+.home-nav {
+    background-color: #4caf50;
+    padding: 15px;
+    color: #45a049;
+
+}
+
+.main-render {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 3%;
+    border-radius: 50%;
+}
+.r-description{
+padding-top: 10px;
+}
+.r-title{
+    color: darkgray;
+    font-size: 12px;
+}

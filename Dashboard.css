@@ -11,19 +11,48 @@ body {
 
 /* Unique CSS for the Navigation Bar */
 nav.nav {
-    background-color: #3498db; /* Blue background color */
+    background-color: #7749F8; /* Blue background color */
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.profile-main{
+    display: flex;
+    justify-content: space-between;
+    background-color: #45a049;
+    color: white;
+    padding: 10px;
+
+}
+.p-div{
+    display: flex;
+    justify-content: space-evenly;
+
+}
 
 nav .h1-nav {
-    font-family: 'Lobster', cursive; /* Apply Lobster font to the entire document */
     color: white;
     margin: 0;
 }
+.main-render {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
 
+.img {
+    width: 3%;
+    border-radius: 50%;
+}
+.r-description{
+padding-top: 10px;
+}
+.r-title{
+    color: darkgray;
+    font-size: 12px;
+}
 nav .img {
     max-width: 50px;
     border-radius: 50%;
@@ -39,26 +68,12 @@ nav .username {
     margin: 0;
 }
 
-nav .logout {
-    background-color: #e74c3c; /* Red background color */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-
-    /* Hover effect */
-    &:hover {
-        background-color: #c0392b; /* Darker red on hover */
-    }
-}
-
 .h1-head {
     /* text-align: center; */
     padding: 25px;
     margin-top: 20px;
+    text-align: center;
+    color: #45a049;
 }
 
 /* Unique CSS for the Blog Form */
@@ -75,6 +90,7 @@ nav .logout {
     margin-bottom: 10px;
     border-radius: 5px;
     border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .description {
@@ -82,7 +98,7 @@ nav .logout {
 }
 
 .btn {
-    background-color: #3498db;
+    background-color: #45a049;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -93,41 +109,12 @@ nav .logout {
 
     /* Hover effect */
     &:hover {
-        background-color: #2980b9; /* Darker blue on hover */
+        background-color:#44a040; /* Darker blue on hover */
     }
 }
 
 /* Unique CSS for the Rendered Blogs */
-.render {
-  display: flex;
-  align-items: center;
-}
 
-/* Add vendor prefixes for webkit properties */
-::-webkit-input-placeholder {
-    color: #999; /* Placeholder text color */
-}
-
-::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #3498db; /* Scrollbar thumb color */
-    border-radius: 5px; /* Scrollbar thumb border-radius */
-}
-
-/* Add more styles as needed */
-.rendertitle{
-    font-size: 30px;
-}
-.rendermain{
-    background-color: white;
-    padding: 25px;
-    width: 60%;
-    border-radius: 5px;
-    
-}
 
 #delete{
     background-color: white; /* Red background color */
@@ -144,6 +131,7 @@ nav .logout {
         background-color: red; /* Darker red on hover */
     }
 }
+
 #update{
     background-color: white;
     /* color: white; */
@@ -152,10 +140,59 @@ nav .logout {
     cursor: pointer;
     border-radius: 5px;
     font-size: 1em;
-    transition: background-color 0.3s ease;
-
-    /* Hover effect */
+    
     &:hover {
-        background-color: #2980b9; /* Darker blue on hover */
+        background-color: green; /* Darker red on hover */
     }
 }
+/* Navbar styling */
+.profile-main {
+    background-color: #45a049; /* Change the background color to green */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .profiles-div h1 {
+    margin: 0;
+    color: #ffffff; /* Text color */
+  }
+  
+  /* Button styling */
+  .p-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    color: #ffffff; /* Text color */
+    background-color: #45a049; /* Green button color */
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Logout button styling */
+  .logout {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff; /* Logout icon color */
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+  
+  /* Hover effect for buttons */
+  .p-btn:hover {
+    background-color: #ffffff; /* Button background color on hover */
+    color: #45a049; /* Text color on hover */
+  }
+  
+  .logout:hover {
+    background-color: white;
+    color: #45a049; /* Logout icon color on hover */
+  }
+  

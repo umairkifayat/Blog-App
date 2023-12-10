@@ -9,8 +9,6 @@ onAuthStateChanged(auth,(user) => {
     if (!user) {
         console.log('not a user')
         home.innerHTML=`<button><a href="log.html"><i class="ri-login-box-line"></i></a></button>`
-        console.log (logout)
-        
     }
 });
 
@@ -51,14 +49,12 @@ let arr = [];
 
 const postsQuerySnapshot = await getDocs(collection(db, "posts"));
 postsQuerySnapshot.forEach((doc) => {
-    // console.log(doc.data());
     arr.push({ ...doc.data(), docId: doc.id });
     
 });
 console.log(arr);
 
-// let imgs ;
-// let name;
+
 
 arr.map( async(item)=>{
     console.log(item.userobj.profileUrl);
@@ -67,15 +63,14 @@ arr.map( async(item)=>{
             const timestamp = Math.floor(new Date().getTime() / 1000); // Get current Unix timestamp in seconds
             const date = new Date(timestamp * 1000); // Convert Unix timestamp to JavaScript Date object
             const daterender = date.toLocaleDateString(); // Format the date as a string
-        render.innerHTML +=`<div class = "rendermain">
-        <div class = "render">
-        <img src="${item.userobj.profileUrl}" alt="" class="img">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<P><b class = 'rendertitle'> ${item.Title}</b><br>
-        &nbsp;&nbsp;&nbsp;${daterender}&nbsp;&nbsp;${item.userobj.firstName}</P> 
+render.innerHTML += `<div class = 'main-render'>
+<img class = 'img' src=${item.userobj.profileUrl} alt='image'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class = 'render-2'>
+<h3 class='r-name'>${item.Title}</h3>
+<p class='r-title'>${item.userobj.firstName}&nbsp;${daterender}</p>
+<p class='r-description'>${item.Description}</p>
 </div>
-
-
-<p>${item.Description}<p><br><br>`
+</div>`
 
 });
 

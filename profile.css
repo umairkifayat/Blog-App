@@ -58,12 +58,12 @@ input {
 }
 
 .but{
-    background-color: #7749F8;
+    background-color:;
     Width : 169px;
     Height: 38px;
     margin-top: 12px;
     Left:219px;
-    Radius: 6px;
+    border-radius: 6px;
     Padding: 10px, 16px, 10px, 16px;
     Gap:8px;
     color: white;

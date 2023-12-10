@@ -3,9 +3,9 @@ import { collection, addDoc, Timestamp, getDocs, orderBy, where, query, doc, del
 import { auth, db } from './config.js';
 
 let userobj;
-let  docimage;
-let  docnam;
-
+let docimage;
+let docnam;
+console.log(docimage);
 
 // on auth function start 
 onAuthStateChanged(auth, async (user) => {
@@ -18,10 +18,8 @@ onAuthStateChanged(auth, async (user) => {
         querySnapshot.forEach((doc) => {
             console.log(doc.data());
             userobj = doc.data()
-            img.src = doc.data().profileUrl;
-            name.innerHTML = doc.data().firstName;
             docimage = doc.data().profileUrl;
-            docnam =  doc.data().firstName;
+            docnam = doc.data().firstName;
         });
         getDataFromFirestore(uid);
         console.log(userobj);
@@ -30,7 +28,6 @@ onAuthStateChanged(auth, async (user) => {
 
 
 // on auth function end 
-
 
 
 
@@ -53,15 +50,15 @@ let arr = [];
 
 
 
-    // logout function 
-    logout.addEventListener('click', () => {
-        signOut(auth).then(() => {
-            console.log('logout successfully');
-            window.location = 'index.html';
-        }).catch((error) => {
-            console.log(error);
-        });
+// logout function 
+logout.addEventListener('click', () => {
+    signOut(auth).then(() => {
+        console.log('logout successfully');
+        window.location = 'index.html';
+    }).catch((error) => {
+        console.log(error);
     });
+});
 
 
 
@@ -71,25 +68,30 @@ let arr = [];
 
 
 
-    
+
 
 // render function 
 function renderpost() {
-    
+
     div.innerHTML = "";
     arr.forEach((item) => {
         let date = item.postDate.seconds;
         let daterender = new Date(date * 1000).toDateString()
-        div.innerHTML += `<div class = "rendermain">
-        <div class = "render">
-        <img src="${docimage}" alt="" class="img">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<P><b class = 'rendertitle'> ${item.Title}</b><br>
-        &nbsp;&nbsp;&nbsp;${daterender}&nbsp;&nbsp;${docnam}</P> 
-        </div>
+        div.innerHTML += `<div class = 'main-render'>
+        <img class = 'img' src=${docimage} alt='image'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class = 'render-2'>
+        <h3 class='r-name'>${item.Title}</h3>
+
+
+            <p class='r-title'>${docnam}&nbsp;${daterender}</p>
+<p class='r-description'>${item.Description}</p>
+</div>
+</div>
+    
+        
         
        
-          <p>${item.Description}<p><br><br>
-
+          
          <button type="button" id="delete">Delete</button>
          <button type="button" id="update" >Edit</button><br>
          <div>`
@@ -108,21 +110,21 @@ function renderpost() {
                 });
         })
     })
-        upd.forEach((btn, index) => {
-            btn.addEventListener('click', async () => {
-                console.log("Edit Called", arr[index]);
-                const updatedTitle = prompt('Enter new Title', arr[index].Title)
-                const updateDes = prompt('Enter new Description', arr[index].Description)
-                await updateDoc(doc(db, "posts", arr[index].docId), {
-                    title: updatedTitle,
-                    description:updateDes,
-                    time: Timestamp.fromDate(new Date())
-                });
-                arr[index].Title = updatedTitle;
-                arr[index].Description = updateDes
-                renderpost()
-            })
-    
+    upd.forEach((btn, index) => {
+        btn.addEventListener('click', async () => {
+            console.log("Edit Called", arr[index]);
+            const updatedTitle = prompt('Enter new Title', arr[index].Title)
+            const updateDes = prompt('Enter new Description', arr[index].Description)
+            await updateDoc(doc(db, "posts", arr[index].docId), {
+                title: updatedTitle,
+                description: updateDes,
+                time: Timestamp.fromDate(new Date())
+            });
+            arr[index].Title = updatedTitle;
+            arr[index].Description = updateDes
+            renderpost()
+        })
+
     })
 }
 
@@ -138,15 +140,15 @@ function renderpost() {
 
 // get data on firestore 
 async function getDataFromFirestore(uid) {
-        arr.length = 0;
+    arr.length = 0;
 
     const querySnapshot = await getDocs(query(collection(db, "posts"), orderBy('postDate', 'desc'), where('uid', '==', uid)));
     querySnapshot.forEach((doc) => {
-        arr.push({ ...doc.data(), docId: doc.id});
-        
+        arr.push({ ...doc.data(), docId: doc.id });
+
         console.log(arr);
     });
- 
+
 
     renderpost();
 }
@@ -184,3 +186,5 @@ btn.addEventListener('click', async (event) => {
         console.error(error);
     }
 });
+
+console.log(userobj);
