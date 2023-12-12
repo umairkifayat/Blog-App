@@ -8,34 +8,12 @@ const password = document.querySelector('.password');
 const btn = document.querySelector('.btn');
 
 
-
-
-
 onAuthStateChanged(auth, (user) => {
   if (user) {
       // console.log(user);
       window.location = './Dashboard.html'
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

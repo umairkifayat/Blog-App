@@ -37,16 +37,12 @@ onAuthStateChanged(auth, async (user) => {
 
 
 
-
-
-
-
 // variables
 const title = document.querySelector('.title');
 const des = document.querySelector('.description');
 const btn = document.querySelector('.btn');
 const div = document.querySelector('.render');
-
+const img = document.querySelector('.img');
 const name = document.querySelector('.username');
 const logout = document.querySelector('.logout');
 let arr = [];
@@ -192,6 +188,7 @@ btn.addEventListener('click', async (event) => {
         console.error(error);
     }
 });
-
+Title.value = '';
+Description.value = '';
 
 console.log(userobj);

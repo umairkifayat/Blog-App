@@ -9,19 +9,6 @@ const confirmpassword = document.querySelector('.c-password');
 const username = document.querySelector('.username');
 const btn = document.querySelector('.btn');
 const Photo = document.querySelector('.img');
-const already = document.querySelector('.already');
-console.log(already);
-
-already.addEventListener('click',()=>{
-    window.location = './log.html'
-})
-
-
-
-
-
-
-
 btn.addEventListener("click", async (event) => {
     event.preventDefault();
 
